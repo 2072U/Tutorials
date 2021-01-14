@@ -1,2 +1,3 @@
-# Tutorials
-Code Snippets for CSCI / MATH 2072U Tutorials
+#  CSCI / MATH 2072U Computational Science 1
+
+## Code Snippets for Tutorials
