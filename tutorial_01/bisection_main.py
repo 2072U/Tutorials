@@ -6,10 +6,10 @@
 
 
 import bisection
-
-def func(x):  # Function for bisection.
-    # Add function
+import math
+def func(x,a):  # Function for bisection.
+    return (x**2)-a
 
 print("--Bisection--\n")
-    # Call Bisection using Recursion
-print ("Solution is " + + " +/- " + + " with residual " + ) # Add the missing variables.
+    x,err,res=bisection(-10,10,5,30,1e-3,1e-3,func)# Call Bisection using Recursion
+print ("Solution is " +str(x) + " +/- " + str(err)+ " with residual " +str(res) ) # Add the missing variables.
