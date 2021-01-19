@@ -5,11 +5,11 @@
 #                       Version 3, 29 June 2007
 
 # Approximates the solution to func(x)=0 by bisection.
-def bisection(l, r, kMax, epsX, epsF, func):
+def bisection(l, r, a, kMax, epsX, epsF, func):
 # Input: initial left and right boundary, max nr. of iterations, tolerance for error and residual, function handle.
     m = (l+r)/2                # Compute midpoint.
     err = abs(r-l)/2           # Compute current error.
-    fm = func(m)               # Compute function value at mid point.
+    fm = func(m,a)               # Compute function value at mid point.
     res = abs(fm)              # Compute current residual.
     x=m                        # Set surrent approximation.
     print("l="+str(l)+" r="+str(r))
