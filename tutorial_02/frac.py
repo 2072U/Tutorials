@@ -1,5 +1,6 @@
 # A mystery script. In tutorial 2 you will be challenged to find out what it does and what you can learn from it.
-# By L. van Veen, Ontario Tech University, 2020.
+# By L. van Veen, Ontario Tech University, 2021.
+
 import numpy as np
 from Newton import Newton
 import matplotlib.pyplot as plt
@@ -27,11 +28,11 @@ fig_height = 1.0
 w = 72.0*fig_width/float(N)
 fig = plt.figure(figsize=[fig_width,fig_height])
 plt.xlim(l,r)
-plt.ylim(0,1)
+plt.ylim(-0.25,0.25)
 plt.xticks([])
 plt.yticks([])
 for k in range(N):
-    x,err,res,conv = Newton(f,df,x0[k],kMax,epsx,epsf)
+    x,err,res,conv = Newton(f,df,x0[k],kMax=kMax,tol_x=epsx,tol_r=epsf)
     if conv == 0:
         c = "k"
     else:
@@ -43,7 +44,7 @@ for k in range(N):
             else:
                 if abs(x-r3) < 10*epsx:
                     c = 'b'
-    plt.plot([x0[k],x0[k]],[0,1],color=c,linewidth=w)
+    plt.plot([x0[k],x0[k]],[-0.25,0.25],color=c,linewidth=w)
+    plt.plot(x0[k], f(x0[k]), '.', color='k', linewidth=0.1)
 
 plt.show()
-
