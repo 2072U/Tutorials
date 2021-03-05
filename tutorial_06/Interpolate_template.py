@@ -12,13 +12,13 @@ def intpl(x,y):                          # Compute the Lagrange interpolating po
     return a
 
 def f(x):                                # Test function
-    return np.exp(x)               
+    return np.exp(x)
 
 def P(x,a):                              # Evaluate interpolant using Horner's algorithm
     n = np.shape(a)[0]-1
-    Q = ...
+    Q = a[n-1] + a[n] * x
     for k in range(n-2,-1,-1):
-        Q = ...
+        Q = a[k] + Q * x
     return Q
 
 for n in range(4,16):                    # Test for increasing number of interpolation nodes
